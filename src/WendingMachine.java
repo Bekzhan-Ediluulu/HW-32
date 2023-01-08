@@ -1,9 +1,9 @@
 import java.util.*;
 
 public class WendingMachine {
-    private List<Product> productsInStock = new ArrayList<>();
+    private final List<Product> productsInStock = new ArrayList<>();
     private int moneyInside;
-    private List<Product>available = new ArrayList<>();
+    private final List<Product>available = new ArrayList<>();
 
     public int getMoneyInside() {
         return moneyInside;
@@ -17,13 +17,6 @@ public class WendingMachine {
                 productsInStock) {
             if (moneyInside >= product.getPrice() && !available.contains(product)) available.add(product);
         }
-//        if (available.size()>0){
-//            System.out.println("Вы можете купить:");
-//            for (Product product :
-//                    available) {
-//                System.out.printf("%d - %s | %d сом", available.indexOf(product)+1, product.getName(), product.getPrice());
-//            }
-//        } else System.out.println("Положите еще монет");
     }
 
     public void setProducts(){
